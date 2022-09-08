@@ -13,10 +13,13 @@ jobs:
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 
+    - name: show generators
+      run: cmake --help
+
     - name: Configure CMake
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A Win32 -DCMAKE_BUILD_TYPE=Debug -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=100 -DFG_ENABLE_MEMLEAK_CHECKS=ON ..
+      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 17 2022" -A Win32 -DCMAKE_BUILD_TYPE=Debug -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=100 -DFG_ENABLE_MEMLEAK_CHECKS=ON ..
 
     - name: Build
       working-directory: ${{runner.workspace}}/build
@@ -39,10 +42,13 @@ jobs:
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 
+    - name: show generators
+      run: cmake --help
+
     - name: Configure CMake
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A Win32 -DCMAKE_BUILD_TYPE=Release  -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=110 ..
+      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 17 2022" -A Win32 -DCMAKE_BUILD_TYPE=Release  -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=110 ..
 
     - name: Build
       working-directory: ${{runner.workspace}}/build
@@ -65,10 +71,13 @@ jobs:
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 
+    - name: show generators
+      run: cmake --help
+
     - name: Configure CMake
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=Debug -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=120 -DFG_ENABLE_MEMLEAK_CHECKS=ON ..
+      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Debug -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=120 -DFG_ENABLE_MEMLEAK_CHECKS=ON ..
 
     - name: Build
       working-directory: ${{runner.workspace}}/build
@@ -91,10 +100,13 @@ jobs:
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 
+    - name: show generators
+      run: cmake --help
+
     - name: Configure CMake
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=Release  -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=110 ..
+      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release  -DFG_CI_BUILD=ON -DFG_VULKAN_VERSION=110 ..
 
     - name: Build
       working-directory: ${{runner.workspace}}/build
